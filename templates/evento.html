@@ -1,0 +1,33 @@
+{% extends "mod_pagina.html" %}
+
+{% block content %}
+
+    <h2>Novo Evento</h2>
+
+    <form action="submit" method="post"> {% csrf_token %}
+        <label>Título:</label>
+        <br>
+        <input type="text" name="titulo" size="23">
+        <br><br>
+        <label>Data e horário:</label>
+        <br>
+        <input type="datetime-local" name="data_evento">
+        <br><br>
+        <label>Descrição:</label>
+        <br>
+        <textarea name="descricao" rows="5" cols="24"></textarea>
+        <br><br>
+        <label>Local do evento:</label>
+        <br>
+        <input type="text" name="local" size="23">
+        <br><br>
+        <label>Status:</label>
+        <input type="checkbox" name="status">
+        <br><br>
+        <button type="submit">Salvar</button>
+        <a href="/">
+            <button type="button">Cancelar</button>
+        </a>
+    </form>
+
+{% endblock %}
